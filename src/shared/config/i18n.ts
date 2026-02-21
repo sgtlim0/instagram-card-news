@@ -1,0 +1,43 @@
+export const KO = {
+  nav: {
+    home: '홈',
+    templates: '템플릿',
+    create: '만들기',
+    cta: '무료로 시작하기',
+  },
+  editor: {
+    accountName: '계정명',
+    accountNamePlaceholder: '계정명을 입력하세요',
+    topic: '주제',
+    topicPlaceholder: '카드뉴스 주제를 입력하세요',
+    slideCount: '슬라이드 수',
+    generate: '생성하기',
+    generating: '생성 중...',
+    style: '스타일',
+    slideList: '슬라이드 목록',
+    addSlide: '슬라이드 추가',
+    editSlide: '슬라이드 편집',
+    slideType: '슬라이드 타입',
+    moveUp: '위로 이동',
+    moveDown: '아래로 이동',
+    delete: '삭제',
+    generateSuccess: '슬라이드가 생성되었습니다!',
+    generatePrompt: '생성하려면 주제를 입력하고 생성 버튼을 눌러주세요',
+  },
+  export: {
+    title: '내보내기',
+    currentSlide: '현재 슬라이드 내보내기',
+    allSlides: '전체 슬라이드 내보내기 (ZIP)',
+    exporting: '내보내는 중...',
+    generateFirst: '먼저 슬라이드를 생성하세요',
+  },
+  preview: {
+    title: '미리보기',
+    empty: '슬라이드가 없습니다',
+    emptyHint: '주제를 입력하고 생성 버튼을 눌러주세요',
+  },
+  header: {
+    title: 'CardNews AI',
+    subtitle: 'AI 카드뉴스 메이커',
+  },
+} as const
