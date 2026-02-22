@@ -24,7 +24,7 @@ export function EditorLayout() {
       </div>
 
       {/* Mobile layout: Preview full width + floating button */}
-      <div className="md:hidden h-[calc(100vh-57px)] relative">
+      <div className="md:hidden h-[calc(100dvh-57px)] relative">
         <PreviewArea />
 
         <Button
@@ -36,7 +36,7 @@ export function EditorLayout() {
         </Button>
 
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-          <SheetContent side="left" className="w-[320px] p-0">
+          <SheetContent side="left" className="w-[85vw] max-w-[400px] p-0">
             <SheetHeader className="px-5 pt-5 pb-2">
               <SheetTitle>편집</SheetTitle>
             </SheetHeader>
