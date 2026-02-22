@@ -15,7 +15,7 @@ function getBedrockConfig(): BedrockConfig {
     region: process.env.AWS_BEDROCK_REGION ?? "us-east-1",
     modelId:
       process.env.AWS_BEDROCK_MODEL_ID ??
-      "us.anthropic.claude-sonnet-4-20250514-v1:0",
+      "us.amazon.nova-micro-v1:0",
   }
 }
 
