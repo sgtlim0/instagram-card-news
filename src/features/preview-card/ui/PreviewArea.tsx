@@ -71,8 +71,8 @@ export function PreviewArea() {
               <Smartphone className="w-8 h-8 text-zinc-600" />
             </div>
           </div>
-          <h2 className="text-xl font-semibold text-white">미리보기</h2>
-          <p className="text-zinc-500 max-w-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-white">미리보기</h2>
+          <p className="text-sm sm:text-base text-zinc-500 max-w-sm">
             주제를 입력하고 생성 버튼을 눌러주세요
           </p>
         </div>
@@ -85,7 +85,7 @@ export function PreviewArea() {
   return (
     <div
       ref={containerRef}
-      className="flex-1 flex flex-col items-center justify-center bg-gradient-radial from-zinc-900 via-zinc-950 to-black p-8"
+      className="flex-1 flex flex-col items-center justify-center bg-gradient-radial from-zinc-900 via-zinc-950 to-black p-4 sm:p-8"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -103,7 +103,7 @@ export function PreviewArea() {
           variant="ghost"
           onClick={handlePrevious}
           disabled={selectedIndex === 0}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full disabled:opacity-30"
+          className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 sm:h-9 sm:w-9 bg-black/50 hover:bg-black/70 text-white rounded-full disabled:opacity-30"
         >
           <ChevronLeft className="h-6 w-6" />
         </Button>
@@ -113,26 +113,30 @@ export function PreviewArea() {
           variant="ghost"
           onClick={handleNext}
           disabled={selectedIndex === slides.length - 1}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full disabled:opacity-30"
+          className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 sm:h-9 sm:w-9 bg-black/50 hover:bg-black/70 text-white rounded-full disabled:opacity-30"
         >
           <ChevronRight className="h-6 w-6" />
         </Button>
       </div>
 
-      <div className="mt-6 flex items-center gap-2">
+      <div className="mt-6 flex items-center gap-1">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setSelectedIndex(index)}
-            className={`
-              w-2 h-2 rounded-full transition-all
-              ${selectedIndex === index
-                ? 'bg-purple-500 w-6'
-                : 'bg-zinc-700 hover:bg-zinc-600'
-              }
-            `}
+            className="relative flex items-center justify-center p-2"
             aria-label={`Go to slide ${index + 1}`}
-          />
+          >
+            <span
+              className={`
+                block h-2 rounded-full transition-all
+                ${selectedIndex === index
+                  ? 'bg-purple-500 w-6'
+                  : 'bg-zinc-700 hover:bg-zinc-600 w-2'
+                }
+              `}
+            />
+          </button>
         ))}
       </div>
 
