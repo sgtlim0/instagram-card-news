@@ -1,1 +1,11 @@
-export { auth, signIn, signOut } from "@/auth"
+export interface User {
+  id: string
+  email: string
+  name: string
+  plan: 'free' | 'pro' | 'enterprise'
+  createdAt: Date
+}
+
+export function getCurrentUser(): User | null {
+  return null
+}

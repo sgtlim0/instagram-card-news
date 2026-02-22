@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server"
-import { auth } from "@/auth"
 import { callBedrock, parseJsonResponse } from "@/shared/lib/bedrock"
 
 interface PlanSlide {
@@ -54,11 +53,6 @@ Generate in Korean (한국어).`
 
 export async function POST(request: Request) {
   try {
-    const session = await auth()
-    if (!session) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     const { topic } = await request.json()
 
     if (!topic || typeof topic !== "string" || topic.trim().length === 0) {

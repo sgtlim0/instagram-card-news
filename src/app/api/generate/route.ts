@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server"
-import { auth } from "@/auth"
 import { callBedrock, parseJsonResponse } from "@/shared/lib/bedrock"
 
 interface Slide {
@@ -68,11 +67,6 @@ Rules:
 
 export async function POST(request: Request) {
   try {
-    const session = await auth()
-    if (!session) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     const { topic, slideCount, style, plan } = await request.json()
 
     if (!slideCount || slideCount < 4 || slideCount > 10) {
